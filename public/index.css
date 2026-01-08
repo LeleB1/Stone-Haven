@@ -1,0 +1,406 @@
+:root {
+  --background-color1: #f4ebe2;
+  --background-color2: #e6d4c2;
+  --accent-color-brown: #4b382a;
+  --accent-color-blue: #182747;
+
+  --title-font : "Bodoni Moda", serif; 
+  --main-font : "Funnel Sans", sans-serif;
+}
+
+body{
+    background-image: url("images/bgPhoto.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+html,
+body{
+    height: 100%;
+}
+
+p{
+    font-family: "Fontdiner Swanky", serif;
+    font-size: 35px;
+    font-weight: bold;
+    font-style: italic;
+    color: #a25c23;
+}
+
+
+.title{
+    font-family: "Oi", serif;
+    font-weight: 400;
+    font-size: 60px;
+    text-align: center;
+    color: white;
+    margin-top: 80px;
+}
+
+/* Styling the navbar */
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar{
+    background-color: #182747;
+    padding: 0 1rem 0 .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+}
+
+.navbar-logo{
+    width: 56px;
+    height: 56px;
+    background-color: #D8D8D8;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.navbar-logo i{
+    width: 2rem;
+    font-size: 1.5rem;
+    color: #182747;
+    transition: transform .6s;
+}
+
+.navbar-logo:hover i{
+    transform: rotateY(-360deg);
+}
+
+.navbar-buttons{
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
+/* Copy email button */
+.navbar-email{
+    background-color: #D8D8D8;
+    color: #182747;
+    padding: .75rem 2rem;
+    border-radius: 4rem;
+    font-family: "Story Script", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Text to copy the email switches when you hover over it */
+.navbar-email span{
+    transition: transform .2s;
+}
+
+.navbar-email span:nth-child(2){
+    position: absolute;
+    transform: translateY(200%);
+}
+
+.navbar-email:hover span:nth-child(1){
+    transform: translateY(-200%);
+}
+
+.navbar-email:hover span:nth-child(2){
+    transform: translateY(0);
+}
+
+/* The hamburger and close buttons */
+.navbar-toggle{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    background: none;
+    border: none;
+    color: #f2ebeb;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.navbar-burger,
+.navbar-close{
+    position: absolute;
+    transition: opacity .3s, transform .4s;
+}
+
+.navbar-burger{
+    opacity: 1;
+}
+
+.navbar-close{
+    opacity: 0;
+}
+
+.navbar-list{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+    list-style-type: none;
+}
+
+.navbar-link{
+    color: #D8D8D8;
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+/* Animations for links on the navbar */
+.navbar-link span{
+    transition: transform .4s;
+    list-style-type: none;
+}
+
+.navbar-link span:nth-child(2){
+    position: absolute;
+    transform: translateY(150%);
+}
+
+.navbar-link:hover span:nth-child(1){
+    transform: translateY(-150%)
+}
+
+.navbar-link:hover span:nth-child(2){
+    transform: translateY(0)
+}
+
+/* Style for large devices */
+@media (min-width: 945px) {
+    .container{
+        margin-inline: auto;
+    }
+
+    .header{
+        top: 0;
+    }
+
+    .navbar{
+        height: 4.5rem;
+        padding: .75rem 1rem;
+    }
+
+    .navbar-logo{
+        width: 56px;
+        height: 56px;
+    }
+
+    .navbar-logo i{
+        font-size: 2rem;
+
+    }
+
+    .navbar-list{
+        display: flex;
+        flex-direction: row;
+        column-gap: 3rem;
+    }
+
+    .navbar-email{
+        font-size: 18px;
+    }
+
+    .navbar-toggle{
+        display: none;
+    }
+}
+
+/* Show hamburger button on small screens */
+.show-menu{
+    right: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* When burger button is clicked, close button appears. They both rotate for a smooth animation */
+.show-icon .navbar-burger{
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+.show-icon .navbar-close{
+    opacity: 1;
+    transform: rotate(-90deg);
+}
+
+/* Style for mobile devices */
+@media (max-width: 945px){
+    .navbar{
+        height: 4.5rem;
+        width: 100vw;
+    }
+    .navbar-menu{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 40vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #1827477f;
+        backdrop-filter: blur(10px);
+        transition: right 0.75s ease;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .show-menu{
+        right: 0;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .navbar-link{
+        color: #D8D8D8;
+        font-weight: 600;
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        margin-top: 1rem;
+    }
+    .navbar-buttons{
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar-menu{
+        width: 100vw;
+        right: -100vw;
+    }
+    .show-menu{
+        right: 0;
+    }
+}
+
+#subtitle{
+    font-family: "Fontdiner Swanky", serif;
+    font-size: 35px;
+    font-weight: bold;
+    font-style: italic;
+    color: #b56d33;
+}
+
+#main-info{
+    font-family: "Indie Flower", cursive;
+    font-size: 30px;
+    font-weight: bold;
+    color: #d0986b;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 2rem;
+}
+
+.info .info-titles{
+    font-family: "DynaPuff", system-ui;
+    font-size: 3rem;
+    color: #3b658b;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+}
+
+.info .info-p{
+    font-family: "Delius", cursive;
+    font-size: 2rem;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.info .lists{
+    font-family: "Delius", cursive;
+    font-size: 1.75rem;
+    text-align: left;
+    color: aliceblue;
+}
+
+.info-p #bold{
+    font-weight: bolder;
+    text-align: left;
+}
+
+.l-titles,
+.list-p{
+    font-family: "Delius", cursive;
+    font-size: 1.75rem;
+    text-align: left;
+    color: aliceblue;
+}
+
+.l-titles{
+    color: #598ab9;
+}
+
+.list-p{
+    margin-left: 0;
+}
+
+/* Stle for the footer */
+.footer{
+    left: 0;
+    margin-top: auto;
+    padding-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-family: "Google Sans Code", monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: #D8D8D8;
+}
+
+#body-404{
+    background-image: url("images/404page.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+}
+
+#title-404{
+    font-family: "Rubik Puddles", system-ui;
+    font-size: 45px;
+    text-align: center;
+}
+
+#back-link{
+    text-decoration: none;
+    font-family: "Delius", cursive;
+    font-size: 2rem;
+}
