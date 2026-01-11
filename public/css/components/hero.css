@@ -1,0 +1,49 @@
+.hero{
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 40px;
+}
+
+body.home .hero{
+    position: relative;
+    height: 100vh;
+    flex: 1;
+}
+
+body.reviews .hero{
+    position: relative;
+    height: 100vh;
+    flex: 1;
+}
+
+.wrapper{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-family: var(--title-font);
+    font-size: 80px;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.subtitle{
+    font-family: var(--main-font);
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+}

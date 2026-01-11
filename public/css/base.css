@@ -1,0 +1,30 @@
+:root {
+  --background-color-light: #f4ebe2;
+  --background-color-dark: #e6d4c2;
+  --accent-color-brown: #4b382a;
+  --accent-color-blue: #182747;
+
+  --title-font :  "Cinzel Decorative", serif;
+  --main-font : "Quicksand", arial;
+}
+
+/* body styling */
+html,
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body.home{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+body.contact{
+    min-height: 100vh;
+    width: 100%;
+    background: var(--background-color-light);
+}

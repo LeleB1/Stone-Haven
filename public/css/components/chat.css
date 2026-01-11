@@ -1,0 +1,70 @@
+.chat{
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    height: 55px;
+    width: 55px;
+    background-color: white;
+    border-radius: 50%;
+    border: none;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+
+}
+
+.chat::before{
+    content: 'WhatsApp';
+    position: fixed;
+    background-color: var(--accent-color-blue);
+    color: white;
+    text-decoration: none;
+    padding: .75rem 1rem;
+    border-radius: 100px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    transform: translateY(-30px) rotate(25deg);
+    opacity: 0;
+    transition: 200ms cubic-bezier(.42,0,.44,1.68);
+}
+
+.chat:hover{
+    background-color: var(--accent-color-blue);
+}
+
+.whatsapp-logo:hover{
+    color: white;
+}
+
+.chat::after{
+    content: '';
+    position: fixed;
+    height: 0;
+    width: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid var(--accent-color-blue);
+    transform: translateY(0) rotate(25deg);
+    opacity: 0;
+    transition: 200ms cubic-bezier(.42,0,.44,1.68);
+}
+
+.chat:hover::before{
+    transform: translateY(-65px) rotate(0);
+    opacity: 1;
+}
+
+.chat:hover::after{
+    transform: translateY(-42px) rotate(0);
+    opacity: 1;
+}
+
+.whatsapp-logo{
+    color: var(--accent-color-blue);
+    font-size: 45px;
+}
+
+#whatsapp-link{
+    text-decoration: none;
+}

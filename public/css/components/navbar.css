@@ -1,0 +1,267 @@
+/* Styling the navbar */
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar{
+    background-color: var(--accent-color-blue);
+    padding: 0 1rem 0 .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+}
+
+.navbar-logo{
+    width: 56px;
+    height: 56px;
+    background-color: white;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.navbar-logo i{
+    width: 2rem;
+    font-size: 1.5rem;
+    color: var(--accent-color-blue);
+    transition: transform .6s;
+}
+
+.navbar-logo:hover i{
+    transform: rotateY(-360deg);
+}
+
+.navbar-buttons{
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
+/* Copy email button */
+.navbar-email{
+    background-color: white;
+    color: var(--accent-color-blue);
+    padding: .75rem 2rem;
+    border-radius: 4rem;
+    font-family: var(--main-font);
+    font-size: 18px;
+    font-weight: 500;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Text to copy the email switches when you hover over it */
+.navbar-email span{
+    transition: transform .2s;
+}
+
+.navbar-email span:nth-child(2){
+    position: absolute;
+    transform: translateY(200%);
+}
+
+.navbar-email:hover span:nth-child(1){
+    transform: translateY(-200%);
+}
+
+.navbar-email:hover span:nth-child(2){
+    transform: translateY(0);
+}
+
+/* The hamburger and close buttons */
+.navbar-toggle{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.navbar-burger,
+.navbar-close{
+    position: absolute;
+    transition: opacity .3s, transform .4s;
+}
+
+.navbar-burger{
+    opacity: 1;
+}
+
+.navbar-close{
+    opacity: 0;
+}
+
+.navbar-list{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+    list-style-type: none;
+}
+
+.navbar-link{
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+/* Animations for links on the navbar */
+.navbar-link span{
+    transition: transform .4s;
+    list-style-type: none;
+}
+
+.navbar-link span:nth-child(2){
+    position: absolute;
+    transform: translateY(150%);
+}
+
+.navbar-link:hover span:nth-child(1){
+    transform: translateY(-150%)
+}
+
+.navbar-link:hover span:nth-child(2){
+    transform: translateY(0)
+}
+
+/* Navbar media quaries */
+/* Style for large devices */
+@media (min-width: 945px) {
+    .container{
+        margin-inline: auto;
+    }
+
+    .header{
+        top: 0;
+    }
+
+    .navbar{
+        height: 4.5rem;
+        padding: .75rem 1rem;
+    }
+
+    .navbar-logo{
+        width: 56px;
+        height: 56px;
+    }
+
+    .navbar-logo i{
+        font-size: 2rem;
+
+    }
+
+    .navbar-list{
+        display: flex;
+        flex-direction: row;
+        column-gap: 3rem;
+    }
+
+    .navbar-email{
+        font-size: 18px;
+    }
+
+    .navbar-toggle{
+        display: none;
+    }
+    /* Show hamburger button on small screens */
+    .show-menu{
+        right: 0;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* When burger button is clicked, close button appears. They both rotate for a smooth animation */
+    .show-icon .navbar-burger{
+        opacity: 0;
+        transform: rotate(-90deg);
+    }
+
+    .show-icon .navbar-close{
+        opacity: 1;
+        transform: rotate(-90deg);
+    }
+}
+/* Style for small screens */
+@media (max-width: 945px){
+    .navbar{
+        height: 4.5rem;
+        width: 100vw;
+    }
+    .navbar-menu{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 40vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background-color: #182747aa;
+        backdrop-filter: blur(10px);
+        transition: right 0.75s ease;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .show-menu{
+        right: 0;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .navbar-link{
+        color: white;
+        font-weight: 600;
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        margin-top: 1rem;
+    }
+    .navbar-buttons{
+        display: none;
+    }
+    .navbar-logo i{
+        width: 1.5rem;
+    }
+}
+/* Style for mobile phones*/
+@media (max-width: 700px) {
+    .navbar-menu{
+        width: 100%;
+        right: -100vw;
+        height: 100%;
+    }
+    .show-menu{
+        right: 0;
+    }
+    .navbar-link{
+        margin-top: 3rem;
+    }
+}

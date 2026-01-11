@@ -1,0 +1,200 @@
+.hero h1{
+    margin-top: 0;
+}
+
+.about-wrapper{
+    display: flex;
+    width: 100%;
+    height: 50vh;;
+    margin: 0;
+    padding: 0;
+    background: var(--background-color-light);
+}
+
+.about-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-info .info-title{
+    font-family: var(--title-font);
+    font-size: 50px;
+    color: white;
+    text-shadow:
+    -3px -2px 0 var(--accent-color-brown), 
+    1px -1px 0 var(--accent-color-brown),
+    1px -1px 0 var(--accent-color-brown),
+    1px 1px 0 var(--accent-color-brown);
+    white-space: nowrap;
+    margin-left: 3rem;
+}
+
+.about-info .info-p{
+    font-family: var(--main-font);
+    font-size: 18px;
+    line-height: 2rem;
+    background: white;
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 7rem 3rem 7rem 0;
+    border-radius: 10px;
+    border: 2px dashed var( --accent-color-brown);
+}
+
+.why-wrapper{
+    display: flex;
+    width: 100%;
+    height: 80vh;;
+    margin: 0;
+    padding: 0;
+    background: var(--background-color-dark);
+    border-top: 2px dashed var(--accent-color-brown);
+}
+
+.why-info{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 2rem;
+}
+
+.why-info .info-title{
+    font-family: var(--title-font);
+    font-size: 50px;
+    color: whitesmoke;
+    text-shadow:
+    -3px -2px 0 var(--accent-color-brown), 
+    1px -1px 0 var(--accent-color-brown),
+    1px -1px 0 var(--accent-color-brown),
+    1px 1px 0 var(--accent-color-brown);
+    white-space: nowrap;
+    margin-right: 3rem;
+}
+
+.why-info .info-p{
+    font-family: var(--main-font);
+    font-size: 18px;
+    line-height: 2rem;
+    background: white;
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 0 5rem 3rem 5rem;
+    border-radius: 10px;
+    border: 2px dashed var( --accent-color-brown);
+}
+
+@media (max-width: 1140px) {
+    .about-info .info-p,
+    .why-info .info-p{
+        font-size: 16px;
+        line-height: 1.5rem;
+        margin: .25rem .5rem .25rem .25rem;
+    }
+}
+
+@media (max-width: 950px) {
+    .about-info .info-title,
+    .why-info .info-title{
+        font-size: 40px;
+    }
+    .about-info .info-p,
+    .why-info .info-p{
+        font-size: 14px;
+        line-height: 1.5rem;
+    }
+}
+
+@media (max-width: 720px) {
+    .about-wrapper{
+        height: 60vh;
+    }
+    .why-wrapper{
+        height: 75vh;
+    }
+    .about-info,
+    .why-info{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .about-info .info-title,
+    .why-info .info-title{
+        font-size: 40px;
+        margin-bottom: .5rem;
+        margin-top: 1rem;
+        width: 95%;
+        text-align: center;
+    }
+    .about-info .info-p,
+    .why-info .info-p{
+        width: 90%;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .about-wrapper{
+        height: 70vh;
+    }
+    .why-wrapper{
+        height: 90vh;
+    }
+    .why-info .info-title{
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .about-wrapper{
+        height: 80vh;
+    }
+    .why-wrapper{
+        height: 100vh;
+    }
+    .about-info .info-title,
+    .why-info .info-title{
+        font-size: 40px;
+        margin-bottom: 0;
+        width: 80%;
+        text-align: center;
+    }
+    .about-info .info-p,
+    .why-info .info-p{
+        margin: 0;
+        padding: 0;
+        width: 95%;
+    }
+}
+
+@media (max-width: 420px) {
+    .about-wrapper{
+        height: 80vh;
+    }
+    .why-wrapper{
+        height: 87vh;
+    }
+    .about-info .info-title,
+    .why-info .info-title{
+        font-size: 45px;
+        margin-bottom: 0;
+        padding-top: 1rem;
+    }
+    .about-info .info-p,
+    .why-info .info-p{
+        padding: 10px 5px 10px 5px;
+        margin: 1rem 1rem 2rem 1rem;
+        width: 90%;
+        height: 95%;
+        font-size: 16px;
+    }
+    .about-info .info-p{
+        height: 75%;
+    }
+    .footer{
+        padding-top: 10rem;
+    }
+}
+
+.footer{
+    background-color: var(--background-color-dark);
+}

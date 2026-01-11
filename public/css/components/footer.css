@@ -1,0 +1,32 @@
+/* Style and position for the footer */
+.footer{
+    left: 0;
+    margin-top: auto;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-family: var(--main-font);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-color-blue);
+}
+
+body.home .footer{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+}
+
+body.body-404 .footer{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+}
